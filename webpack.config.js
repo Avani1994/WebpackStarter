@@ -19,17 +19,17 @@ module.exports = {
   // Depending on mode Webpack will apply different things
   // on final bundle. For now we don't need production's JavaScript 
   // minifying and other thing so let's set mode to development
-  mode: 'development',
+  mode: 'production',
   
   module: {
   rules: [
     {
-        test: /\.(js)$/,
+        test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: ['@babel/preset-env', "@babel/preset-react"]
           }
         }
       }
