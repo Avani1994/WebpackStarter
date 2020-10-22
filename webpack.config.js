@@ -1,18 +1,19 @@
 // Webpack uses this to work with directories
 const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 // This is the main configuration object.
 // Here you write different options and tell Webpack what to do
 module.exports = {
 
   // Path to your entry point. From this file Webpack will begin his work
-  entry: './src/index.js',
+  entry: './src/index.jsx',
 
   // Path and filename of your result bundle.
   // Webpack will bundle all JavaScript into this file
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: "[name].[contenthash].js",
   },
 
   // Default mode for Webpack is production.
@@ -34,5 +35,10 @@ module.exports = {
         }
       }
   ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
 };
