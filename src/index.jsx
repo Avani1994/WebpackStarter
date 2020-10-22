@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import './scss/styles.scss';
 
 // Testing code for JS
 function component() {
@@ -14,7 +15,7 @@ document.body.appendChild(component());
 class App extends React.Component{
     render() {
         return(
-            <div style={{ display: "flex" }}>
+            <div className="title" style={{ display: "flex" }}>
                 <strong>Hello React</strong>
             </div>
         );
