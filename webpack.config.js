@@ -78,7 +78,19 @@ module.exports = {
                  }
                }
              ]
-      }
+      },
+      {
+        test: /\.svg$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 1024 * 1024,
+              outputPath: 'svg'
+            },
+          },
+        ],
+      },
   ]
   },
   plugins: [
