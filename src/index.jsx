@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import './scss/styles.scss';
+import house from "../public/images/house.jpeg";
 
 // Testing code for JS
 function component() {
@@ -17,6 +18,7 @@ class App extends React.Component{
         return(
             <div className="title" style={{ display: "flex" }}>
                 <strong>Hello React</strong>
+                 <img src={house} style={{ width: "200px", height: "200px" , padding: "20px"}}></img>
             </div>
         );
     }
